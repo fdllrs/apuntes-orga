@@ -1,3 +1,6 @@
+#Organización-y-Arquitectura-de-Computadores #apunte
+
+---
 Encargado de realizar la conversión entre la dirección de memoria física y la lógica en un procesador.
 Le permite al sistema operativo asignar el mismo espacio lógico a distintos procesos, sin importarle la memoria física
 ![[image-63.webp]]

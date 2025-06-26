@@ -1,7 +1,6 @@
 #Organización-y-Arquitectura-de-Computadores #apunte
 
 ---
-
 ## Interrupciones de Hardware
 Son señales eléctricas enviadas desde un dispositivo I/O que genera un evento en el procesador.
 Se manejan a través de un controlador llamado controlador de interrupciones (PIC) que las gestiona y prioriza y envía a la CPU secuencialmente.
@@ -37,7 +36,7 @@ El procesador carga el Selector de segmento y el offset y fetchea la instrucció
 ![[image-56.webp]]
 ### Vectorización de Interrupción
 ![[image-57.webp]]
-Mediante el registro `IDTR` localizamos la `IDT`. Luego, según el `type` de la interrupción que se haya levantado, buscamos la entrada en la tabla y miramos el descriptor. El campo de selector de segmento apunta a una entrada en la `GDT/IDT` (para la materia usamos siempre GDT). De este selector obtenemos el segmento donde está definida la rutina de atención a la interrupción. A esta dirección base le sumamos el offset del primer descriptor y obtenemos el punto de entrada de la rutina.
+Mediante el registro `IDTR` localizamos la `IDT`. Luego, según el `type` de la interrupción que se haya levantado, buscamos la entrada en la tabla y miramos el descriptor. El campo de selector de segmento apunta a una entrada en la GDT/IDT (para la materia usamos siempre [[Global Descriptor Table|GDT]]). De este selector obtenemos el segmento donde está definida la rutina de atención a la interrupción. A esta dirección base le sumamos el offset del primer descriptor y obtenemos el punto de entrada de la rutina.
 
 DUDA:
 	por que la puerta para int n tiene un campo de selector de segmento? se refiere a que la rutina está en ese segmento? por que entonces luego va a la idt? no puede ir directamente?

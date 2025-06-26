@@ -1,3 +1,6 @@
+#Organización-y-Arquitectura-de-Computadores #apunte
+
+---
 ## Formato de un Selector de Segmento
 
 ![[image-64.webp]]
@@ -29,9 +32,9 @@
 ## Generación de la [[Tipos de Memoria|Dirección Lineal]]
 
 ![[image-66.webp]]
-1. El procesador evalúa el estado del bit 2 del selector, es decir TI. En este caso TI = 0 entonces va a la GDT. 
-2. El registro GDTR del procesador contiene en su campo dirección base la dirección física en donde comienza la GDT
-3. El valor n contenido por los 13 bits del campo Index del selector referencia al n-ésimo elemento de la GDT.
+1. El procesador evalúa el estado del bit 2 del selector, es decir TI. En este caso TI = 0 entonces va a la [[Global Descriptor Table|GDT]]. 
+2. El registro GDTR del procesador contiene en su campo dirección base la dirección física en donde comienza la [[Global Descriptor Table|GDT]]
+3. El valor n contenido por los 13 bits del campo Index del selector referencia al n-ésimo elemento de la [[Global Descriptor Table|GDT]].
 4. El procesador accede a la dirección de memoria física dada por: $GDT.Base + 8 ∗ Index$ y lee 8 bytes a partir de ella. 
 5. Una vez leído el descriptor, internamente reordena la dirección base y el límite y agrupa los Atributos.
 6. La Unidad de protección verifica que el offset contenido en el registro correspondiente de la dirección lógica corresponda al rango de offsets validos del segmento de acuerdo al valor del campo límite, y de los bits de atributos `G`, `D/B`, y `ED`.

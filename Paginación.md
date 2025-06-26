@@ -1,3 +1,6 @@
+#Organización-y-Arquitectura-de-Computadores #apunte
+
+---
 Los tamaños de página son uniformes de 4Kbytes. Para un espacio lineal de 4GB dividido en páginas de 4Kb necesitamos $2^{20}$ páginas. Con 20 Bits para la dirección de la página más 12 bits de atributos conformamos un descriptor de páginas de 32 bits.
 ## Niveles
 Tener $2^{20}$ descriptores de 4 Bytes cada uno nos ocuparía 4MB (un montón) así que la página queda organizada por niveles. Está pensado como un sistema de administración por tarea, de modo que cada tarea tiene su propia estructura de páginas.
